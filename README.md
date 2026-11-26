@@ -8,7 +8,9 @@ The whole architecture is based on Docker and Docker Compose.
 1. Using [```itzg/minecraft-server```](https://github.com/itzg/docker-minecraft-server), the server is booted up with generous thread and RAM allowances.
 2. The entire server uses an internal reverse proxy via [```itzg/mc-router```](https://github.com/itzg/mc-router). While this is a bit overkill, I kept it in case I ever wanted to add parallel instances. Honestly, you can do this with Caddy as well.
 3. I got myself a free Oracle Free Tier account for their VPS. Typically, VPS is paid, so you either have to pay a bit of moolah or you end up with something like playit.gg, which then assigns you incredibly silly names (my server was named stallion-anderson.tun.ply.gg). I am not unironically sending my friends that link. Oracle gives me enough headroom with the actual VPS bandwidth that the free tier is more than enough for me (10TB). Even if my friends had nothing better to do, and were on the server, say, 24/7 for a month, it would be 24 * 30 * 8 = 5760 player hours. My server isn't hosting 50 mods making Minecraft into Rust, it is basic Create + some nice additions for the builders among us. So let's be incredibly uncharitable and say 200MB per player hour, we are still only using a little more than one terabyte of bandwidth.
+
 **How to set up the VPS Instance (Partial Instructions)**
+
 If it was complex, I would've needed so much longer to figure it out. It isn't. Here's the simple instructions.
 - Search up "Oracle Free Tier" in Google, click the Oracle link, and sign up. Once you do the rigamarole, you'll eventually have an account.
 - Sign into Oracle Cloud. From the hamburger menu, go to Compute > Instances. Create a new instance. Name it as your heart desires, and for the Image, select Ubuntu 24.04.

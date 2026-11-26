@@ -2,7 +2,7 @@
 Backup for website and Minecraft server that I run for friends.
 
 Feel free to copy my different configs and the like, and my map if you want it for whatever reason.
-This uses a very specific stack. I host this on a server which also holds a bunch of other data on it, so it is a self-contained thing.
+This uses a very specific stack. I host this on a server which also holds a bunch of other data on it, so it is a self-contained thing. The main reason I developed this was because my house uses business modem endpoints (yay, massive managed apartment buildings!), meaning I can't port-forward easily, and neither did I want to due to the security risks. But also being a student, I DEFINITELY didn't want to pay money for a VPS. 
 
 The whole architecture is based on Docker and Docker Compose.
 1. Using [```itzg/minecraft-server```](https://github.com/itzg/docker-minecraft-server), the server is booted up with generous thread and RAM allowances.

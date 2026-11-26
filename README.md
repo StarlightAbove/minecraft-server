@@ -21,9 +21,19 @@ If it was complex, I would've needed so much longer to figure it out. It isn't. 
 - Create a reserved IP. It will randomly assign one to you, that's fine.
 - Once you can see your new IP, go back to Compute > Instances. It should be running. Click on it, go to the Networking tab, and the "Attached VNICs". There will be one network there. Click on the three dots next to it, and click edit. It will show you the IPs, and there will be a radio menu on that page which asks if you want to assign a public IP. Select "Reserved Public IP", and select the newly created IP.
 
-You can now access your machine! Now comes the fun stuff.
-(More to be added)
+You can now access your machine! Now comes the fun stuff. You now need to expand access to your relevant ports so that both the game and the website can be accessible. This can be done by going to Networking > Virtual Cloud Networks > (Select Correct VCN) > Security > Security List > Add Ingress Rules. Your ingress rules are as follows:
 
+Source CIDR: 0.0.0.0/0	
+| IP Protocol | Destination Port Range | Description |
+| :--- | :---: | ---: |
+| UDP | 51820 | WireGuard Tunnel |
+| TCP | 25565 | Minecraft Java |
+| TCP | 80    | HTTP / SSL Renewal |
+| TCP | 443   | HTTPS Status & BlueMap |
+
+DO NOT DELETE EXISTING RULES.
+
+Now, all the appropriate ports are unlocked. SSH into your machine.
 
 5. I also had the idea that my friends should be able to see when I have the server down for maintenance or whatever, who are online, and all that via a simple web-interface, and additionally, what if I can direct that through that exact same link? This is where I am maybe going a little bit too crazy with technical ambition, but it was honestly easy enough to set-up. I ran a light Caddy on the Oracle server itself, whose entire job was to check "is this request on port 25565 or port 80/443", and then redirect it to the Minecraft server or the website. Easy, simple, works like a charm.
 6. I hosted the actual website on my own server, cause why not? Updating the live data then becomes a matter of dealing with a local DB, and then pushing it to a Vercel frontend. I debated hosting on GitHub Pages, but it was more trouble than it was worth for essentially a single page website.

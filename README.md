@@ -1,5 +1,11 @@
-# MC on Petrova
+### Human Foreword
+This was very much built with Claude. The thing is, it's easy to work with and I did this in about 2 hours. Actually figuring this code out would take me a solid few hours that I did not have :c. Alas, it works.
 
+For people who actually need access to the server, don't read the slop below. That is for the nerds who want to recreate this. 
+Joining on minecraft is just: mc.elizakishan.com.
+To check server state, it is mc.elizakishan.com in your browser. C'est tout. 
+
+# Instructions to build this setup
 A NeoForge 1.21.1 Create server with a status website. One address,
 `mc.elizakishan.com`, works in both Minecraft and a browser. A small Oracle Cloud
 VPS is the public side. Minecraft, the home end of the tunnel and the website run

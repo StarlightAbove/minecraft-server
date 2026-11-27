@@ -41,6 +41,7 @@ Crediting authors does **not** grant permission to redistribute their files.
 | [Sophisticated Backpacks](https://modrinth.com/mod/sophisticated-backpacks) | 3.26.23.2263 | P3pp3rF1y; art by Ridanisaurus | All Rights Reserved |
 | [Sophisticated Core](https://modrinth.com/mod/sophisticated-core) | 1.5.43.2504 | P3pp3rF1y | All Rights Reserved |
 | [Sophisticated Storage](https://modrinth.com/mod/sophisticated-storage) | 1.6.22.2244 | P3pp3rF1y; art by Ridanisaurus | All Rights Reserved |
+| [squaremap](https://modrinth.com/plugin/squaremap) (server only) | 1.3.2 | jmp (jpenilla) | MIT |
 | [Supplementaries](https://modrinth.com/mod/supplementaries) | 4.1.4 | MehVahdJukaar, Plantkillable | Supplementaries Team License |
 | [Towns and Towers](https://modrinth.com/mod/towns-and-towers) | 1.13.11 | Biban_Auriu, Kubek, Cristelknight (Cristelknight999) | CC-BY-NC-SA-4.0 (jar says CC-BY-NC-ND-4.0) |
 | [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap) | 26.6.0 | xaero96 (thexaero) | All Rights Reserved |

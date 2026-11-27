@@ -27,7 +27,12 @@ export default async function Home() {
         <section className="section wrap map" id="map" aria-labelledby="map-heading">
           <h2 id="map-heading">World Map</h2>
           {SITE.mapUrl ? (
-            <iframe className="map-view" src={SITE.mapUrl} title="Live world map" loading="lazy" />
+            <>
+              <iframe className="map-view" src={SITE.mapUrl} title="World map" loading="lazy" />
+              <a className="button map-open" href={SITE.mapUrl} target="_blank" rel="noopener noreferrer">
+                Open Full Map
+              </a>
+            </>
           ) : (
             <p className="map-view map-pending">Cartographers are hard at work!</p>
           )}

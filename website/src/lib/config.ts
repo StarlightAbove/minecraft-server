@@ -5,15 +5,15 @@ export const SITE = {
   minecraftVersion: "1.21.1",
   loader: "NeoForge 21.1.267",
   // TODO: replace with the Google Drive link to the modpack.
-  modpackUrl: "https://drive.google.com/file/d/1gevxA4QfW0vmnR_OAl7dBJcFjDVkMXy8/view?usp=sharing",
+  modpackUrl: "https://github.com/StarlightAbove/minecraft-server/releases/download/1.0/MCOnPetrova.1.0.0.mrpack",
   // Official site of Prism Launcher.
   launcherUrl: "https://prismlauncher.org/download/",
   // TODO: add the server address. Leave empty to show "Coming soon".
   serverAddress: "mc.elizakishan.com",
   // Instagram handle (without the @) that people message to get whitelisted.
   whitelistContact: "eliza.kishan",
-  // TODO: add the BlueMap or Dynmap URL. Leave empty to show the placeholder.
-  mapUrl: "",
+  // squaremap, proxied by this site (see next.config.ts). Leave empty to show the placeholder.
+  mapUrl: "/map/index.html",
 };
 
 export const REFRESH_SECONDS = 15;

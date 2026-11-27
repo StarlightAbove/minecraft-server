@@ -6,7 +6,7 @@ Joining on minecraft is just: mc.elizakishan.com.
 To check server state, it is mc.elizakishan.com in your browser. C'est tout. 
 
 # Instructions to build this setup
-A NeoForge 1.21.1 Create server with a status website. One address,
+A NeoForge 1.21.1 Create server with a status website and world map. One address,
 `mc.elizakishan.com`, works in both Minecraft and a browser. A small Oracle Cloud
 VPS is the public side. Minecraft, the home end of the tunnel and the website run
 in Docker on the home PC.
@@ -18,7 +18,7 @@ Mod credits are in [MODS.md](MODS.md).
 - [How it works](#how-it-works) and [files](#files)
 - Setup: steps [1](#1-minecraft-server-and-mods) to [11](#11-idle-reclaim)
 - [Player modpack](#2-player-modpack)
-- [Website](#website), [backups](#backups), [sharing the world](#sharing-the-world), [running the server](#running-the-server)
+- [Website](#website), [world map](#world-map), [backups](#backups), [sharing the world](#sharing-the-world), [running the server](#running-the-server)
 - [Future idea: auto-repair watchdog](#future-idea-auto-repair-watchdog-not-built)
 
 ## How it works
@@ -27,6 +27,7 @@ DNS points the name at the VPS. The port decides what happens.
 
     Minecraft --25565--> VPS --WireGuard--> [wireguard container] mc-router :25565 --> mc
     Browser   --80/443-> VPS Caddy --WireGuard--> [wireguard container] website :3000
+                                                                  /map/ --> mc :8080 (squaremap)
 
 - No SRV record is needed, because 25565 is Minecraft's default port.
 - The home PC only dials out, so the router needs no port forwarding.
@@ -422,13 +423,43 @@ A Next.js page showing server status, players and the modpack link. It runs in t
 
       docker compose up -d --build website
 
+## World map
+
+[squaremap](https://modrinth.com/plugin/squaremap) runs inside `mc`. Its web server
+(port 8080) isn't published; the website serves it at
+`https://mc.elizakishan.com/map/` and shows it in the **Map** section. The VPS needs
+no changes. Players don't need to install it.
+
+Settings are in `data/squaremap/config.yml`, which is created on first start and
+isn't in Git. After the first start, check these:
+
+| Setting | Value | Why |
+|---|---|---|
+| `settings.web-address` | `https://mc.elizakishan.com/map` | Public address |
+| `world-settings.default.player-tracker.enabled` | `true` (the default) | Live player positions, to help people find each other. The map is public, so anyone can see them, along with armor and health |
+
+Then apply the settings and draw what has already been explored:
+
+    docker exec minecraft-server rcon-cli "squaremap reload"
+    docker exec minecraft-server rcon-cli "squaremap fullrender minecraft:overworld"
+
+After that, changed areas update automatically. The Nether and End stay blank until
+someone visits them; a full render of a world nobody has visited logs a "Failed to
+list region files" warning.
+
+To hide someone's position, or show it again (regular players likely can't run
+these themselves, as squaremap appears to require operator permission):
+
+    docker exec minecraft-server rcon-cli "squaremap hide PLAYER_NAME"
+    docker exec minecraft-server rcon-cli "squaremap show PLAYER_NAME"
+
 ## Backups
 
 Backups stay on the PC: neither `backups/` nor `data/` goes into Git. Keep another
 copy on a different drive. A plain archive of `data/` would include the **RCON
 password** (`server.properties`, `.rcon-cli.*`) and **player IP addresses** (logs,
 ban list), so use the command below. It leaves those out, along with downloadable
-files and `data/mods`, which comes from `mods/`. These backups still contain player
+files, `data/mods` (which comes from `mods/`) and the rendered map. These backups still contain player
 data, so **don't publish them**.
 
 **PC (fish):** stopping `mc` gives a consistent copy. Do it when nobody is playing.
@@ -439,6 +470,7 @@ set FILE backups/data-(date +%F-%H%M).tar.gz
 docker compose stop mc
 and tar -czf $FILE --exclude=data/libraries --exclude=data/.cache --exclude=data/mods \
     --exclude=data/logs --exclude=data/crash-reports --exclude=data/server.properties \
+    --exclude=data/squaremap/web --exclude=data/squaremap/data \
     --exclude='data/.rcon-cli*' --exclude=data/banned-ips.json data
 docker compose start mc
 ls -lh $FILE
@@ -473,7 +505,7 @@ Attach the zip to a GitHub Release. Don't commit it.
 5. Set `white-list=true` and any other custom settings in
    `data/server.properties`, using `data.old` as a reference. Then run
    `docker compose restart mc`.
-6. Check the world, then run
+6. Redraw the map ([World map](#world-map)). Check the world, then run
    `docker compose up -d --force-recreate wireguard router website`.
 
 ## Running the server

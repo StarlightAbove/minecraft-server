@@ -1,6 +1,6 @@
 # Minecraft server status page
 
-Single-page Next.js site: server status, online players and the modpack link.
+Single-page Next.js site: server status, online players, world map and the modpack link.
 
 ## Run
 
@@ -28,9 +28,10 @@ The site runs in the `website` container on the home PC (`Dockerfile`, defined i
 ## Configuration
 
 - Title, tagline, versions, modpack and launcher links: `src/lib/config.ts`
-- Server address, whitelist contact and map URL (BlueMap/Dynmap): also `src/lib/config.ts`.
-  Empty values show placeholders. If this site is served over HTTPS, the map URL
-  must be HTTPS too, and the map server must allow being shown in an iframe.
-  Rebuild after any change.
+- Server address, whitelist contact and map URL: also `src/lib/config.ts`.
+  Empty values show placeholders. Rebuild after any change.
+- World map: squaremap, served under `/map/` by a rewrite in `next.config.ts`.
+  It forwards to `http://mc:8080`; set `MAP_ORIGIN` at **build** time to change that
+  (for `npm run dev`, point it at a reachable squaremap).
 - Minecraft address: `MC_HOST` and `MC_PORT` environment variables (default `127.0.0.1:25565`)
 - Voxel artwork and favicon: `node scripts/make-art.mjs`

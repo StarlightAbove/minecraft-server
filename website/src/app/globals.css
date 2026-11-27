@@ -445,6 +445,10 @@ dt {
   border: 3px solid var(--line);
 }
 
+.map-open {
+  margin-top: 1.5rem;
+}
+
 /* Faint map grid behind the placeholder */
 .map-pending {
   display: grid;

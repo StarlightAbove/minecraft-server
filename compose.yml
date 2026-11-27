@@ -1,0 +1,78 @@
+services:
+    mc:
+        image: itzg/minecraft-server:latest
+        container_name: minecraft-server
+        ports:
+            - 25565:25565
+        environment:
+            EULA: "TRUE"
+            TYPE: "NEOFORGE"
+            DIFFICULTY: "normal"
+            VERSION: "1.21.1"
+            NEOFORGE_VERSION: "21.1.267"
+            MEMORY: "8G"
+        tty: true
+        stdin_open: true
+        restart: unless-stopped
+        volumes:
+            - ./data:/data
+            - ./mods:/mods
+            - /etc/timezone:/etc/timezone
+
+    # Public access: VPS -> WireGuard -> this container's network. The VPS can
+    # only reach what listens here: mc-router (25565) and the website (3000).
+    wireguard:
+        image: lscr.io/linuxserver/wireguard:latest
+        container_name: minecraft-wireguard
+        cap_add:
+            - NET_ADMIN
+        environment:
+            PUID: "1000"
+            PGID: "1000"
+        # Stops the VPS from routing through this container to anything else.
+        sysctls:
+            net.ipv4.ip_forward: "0"
+        volumes:
+            # Holds wg_confs/wg0.conf, including the private key. Not for Git.
+            - ./wireguard:/config
+        healthcheck:
+            test: ["CMD-SHELL", "ip -4 addr show wg0 | grep -q 10.8.0.2"]
+            interval: 10s
+            timeout: 5s
+            retries: 6
+        restart: unless-stopped
+
+    router:
+        image: itzg/mc-router:latest
+        container_name: minecraft-router
+        network_mode: service:wireguard
+        environment:
+            DEFAULT: "mc:25565"
+        depends_on:
+            wireguard:
+                condition: service_healthy
+                restart: true
+        restart: unless-stopped
+
+    website:
+        build: ./website
+        container_name: minecraft-website
+        network_mode: service:wireguard
+        environment:
+            # Listen only on the tunnel address.
+            HOSTNAME: "10.8.0.2"
+            PORT: "3000"
+            MC_HOST: "mc"
+            MC_PORT: "25565"
+        read_only: true
+        tmpfs:
+            - /tmp
+        cap_drop:
+            - ALL
+        security_opt:
+            - no-new-privileges:true
+        depends_on:
+            wireguard:
+                condition: service_healthy
+                restart: true
+        restart: unless-stopped

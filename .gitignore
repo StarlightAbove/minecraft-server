@@ -1,0 +1,11 @@
+# Secrets
+.env
+# Holds the WireGuard private key. Rebuild wg0.conf from wg0.conf.example (README.md).
+/wireguard/
+
+# Live server data
+/data/
+
+# backups/ is committed, except this early archive: it contains the RCON password
+# and logs with player IP addresses. Its .sanitized copy is safe from both.
+/backups/data-pre-mods-2026-11-27.tar.gz

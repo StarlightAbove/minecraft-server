@@ -36,6 +36,10 @@ export default async function Home() {
           ) : (
             <p className="map-view map-pending">Cartographers are hard at work!</p>
           )}
+          <p>
+            The map only renders as far as chunks have loaded. This is a technical Minecraft
+            limitation. If you wanna see more of the map, explore!
+          </p>
         </section>
 
         <section className="band" id="modpack" aria-labelledby="modpack-heading">

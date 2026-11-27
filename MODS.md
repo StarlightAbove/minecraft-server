@@ -1,7 +1,8 @@
 # Mod credits
 
 Thank you to everyone who made these. Names come from project pages and the
-metadata inside each jar, collected 2026-11-27. They may not include every
+metadata inside each jar, collected 2026-11-27.
+Alex's Mobs Continued is an unofficial continuation of the original mod. They may not include every
 contributor; each project page is the authority. Licenses are as listed on
 Modrinth, or in the jar for files not matched there.
 
@@ -12,9 +13,11 @@ Crediting authors does **not** grant permission to redistribute their files.
 | Mod | Version | Authors and credits | License |
 |---|---|---|---|
 | [Aileron](https://modrinth.com/mod/aileron) | 1.1.4 | Team Lodestar: ryanhcode, Violunae, egshels, Trivaxy, SammySemicolon | LGPL-3.0-only |
+| [Alex's Mobs Continued](https://modrinth.com/mod/alexs-mobs-continued) | 2.3.0 | Original designs, models, textures and animations: AlexModGuy and the Alex's Mobs team. Continuation: Lynk (Codx). Jar lists Alexthe668 (as spelled there), Carro1001, Paint_Ninja, Lynk, Codx.io | GPL-3.0-only |
 | [Aquaculture 2](https://modrinth.com/mod/aquaculture) | 2.7.22 | Shadowclaimer (Shadowclaimr), Girafi. Credits: Glassmaker, lclc98, Freyja, Rebelkeithy | All Rights Reserved |
 | [Bird Watching](https://www.curseforge.com/minecraft/mc-mods/bird-watching) | 3.9.7 | EdDYON | MIT (code); restricted (model assets) |
 | [Cloth Config API](https://modrinth.com/mod/cloth-config) | 15.0.140 | shedaniel | LGPL-3.0-only |
+| [CodxLib](https://modrinth.com/mod/codxlib) | 1.6.1 | codx (Lynk / Codx) | CC-BY-NC-ND-4.0 |
 | [Corpse](https://modrinth.com/mod/corpse) | 1.1.22 | Max Henkel (henkelmax) | All Rights Reserved |
 | [Create](https://modrinth.com/mod/create) | 6.0.10 | simibubi, IThundxr | Create Mod License |
 | [Create Aeronautics](https://modrinth.com/mod/create-aeronautics) (with Simulated and Offroad) | 1.3.3 | Simulated Team: ryanhcode, KyanBirb, Cyvack, Kryppers, Eriksonn, keyberries, BeeIsYou, Starlotte. Contributors: Ocelot, cakeGit, Farcr, Addy, LlamaMann, ModogTheDev | Simulated Project License |

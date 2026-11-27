@@ -78,7 +78,11 @@ connections.** Then add players:
   Refurbished Furniture, the steampunk planes, Framework and the resource pack
   were downloaded from CurseForge.
 - Libraries not on the wish list were added where mods required them.
-- **Alex's Mobs is not installed:** no 1.21.1 NeoForge build was found.
+- **Alex's Mobs** has no official 1.21.1 NeoForge build that was found. Installed
+  instead: the unofficial [Alex's Mobs Continued](https://modrinth.com/mod/alexs-mobs-continued)
+  with [CodxLib](https://modrinth.com/mod/codxlib), both from Modrinth. Players
+  need both (the jar requires CodxLib on both sides, although Modrinth labels it
+  server-only). Citadel isn't needed. Don't install a second Alex's Mobs port.
 - JEI 19.64.0.455 declares a Minecraft range that appears to exclude 1.21.1, but
   it loaded on the server. Check that recipes show in game.
 - `allow-flight` is off. If players get kicked for flying on planes or airships,

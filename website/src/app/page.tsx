@@ -26,6 +26,10 @@ export default async function Home() {
 
         <section className="section wrap map" id="map" aria-labelledby="map-heading">
           <h2 id="map-heading">World Map</h2>
+          <p className="map-note">
+            The map only renders as far as chunks have loaded. This is a technical Minecraft
+            limitation. If you wanna see more of the map, explore!
+          </p>
           {SITE.mapUrl ? (
             <>
               <iframe className="map-view" src={SITE.mapUrl} title="World map" loading="lazy" />
@@ -36,10 +40,6 @@ export default async function Home() {
           ) : (
             <p className="map-view map-pending">Cartographers are hard at work!</p>
           )}
-          <p>
-            The map only renders as far as chunks have loaded. This is a technical Minecraft
-            limitation. If you wanna see more of the map, explore!
-          </p>
         </section>
 
         <section className="band" id="modpack" aria-labelledby="modpack-heading">

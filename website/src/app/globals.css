@@ -426,7 +426,8 @@ dt {
   margin: 0 auto;
 }
 
-.empty {
+.empty,
+.map-note {
   padding: 2.5rem 1rem;
   background: var(--surface);
   border-bottom: 4px solid var(--line);
@@ -435,6 +436,10 @@ dt {
 
 .map {
   padding-top: 0;
+}
+
+.map-note {
+  margin-bottom: 1.5rem;
 }
 
 .map-view {

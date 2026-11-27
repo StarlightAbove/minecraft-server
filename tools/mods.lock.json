@@ -1,0 +1,177 @@
+[
+  {
+    "path": "client-extras/mods/skinlayers3d-neoforge-1.11.4-mc1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/GJTnQGfe/skinlayers3d-neoforge-1.11.4-mc1.21.1.jar",
+    "sha512": "541d39edf2781676d9777e3c4a18f179f0b0c04f3ea10d279154996b165e02ae5431100f74f95125ba6df2d7f78aacb9353a02e0c2a436b878e7393788cb0a6b"
+  },
+  {
+    "path": "client-extras/resourcepacks/Create-Immersive-Aircrafts-Resource-Pack-1.21.1-3.0.zip",
+    "url": "https://cdn.modrinth.com/data/u2gFNctb/versions/Da0O9Q3y/Create%20Immersive%20Aircrafts%20Resource%20Pack%201.21.1%20-%203.0.zip",
+    "sha512": "43bb9fb9f9215052dc40a83ad860ef5c21e2d3cadda5e2864c460756004a269a771a5a9a9ec5a53fbb49685b42400aa6bf8d5a427c6a5ae115683896fdfe5d14"
+  },
+  {
+    "path": "mods/aileron-1.21.1-neoforge-1.1.4.jar",
+    "url": "https://cdn.modrinth.com/data/b8kG1VGq/versions/XDz1C9KI/aileron-1.21.1-neoforge-1.1.4.jar",
+    "sha512": "65fdd62ab143a09a5b0049996f6a65361a4447646d41fa1f092af8df85e3106eb531de07e32ce10ac29c318d1ff03427dde143abcf2e616d8bd2bccfb2f575c3"
+  },
+  {
+    "path": "mods/alexsmobs-2.3.0-neoforge+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/kYIaHHfw/versions/W1GpuQLg/alexsmobs-2.3.0-neoforge%2B1.21.1.jar",
+    "sha512": "d26a6175aaafb1e0139487f0d7833a3559e22afeefede71422e1c025ed6e5e83730a0f84e27fe5c8ce68ae6813da3132426983b2dab399ac7d5fb4b48b084cda"
+  },
+  {
+    "path": "mods/Aquaculture-1.21.1-2.7.22.jar",
+    "url": "https://cdn.modrinth.com/data/Vl1uNAuy/versions/EVDXfAI9/Aquaculture-1.21.1-2.7.22.jar",
+    "sha512": "f595a94cb5caf683ceebc01dc5265df934ecb0e6e0e01aec8934bc79193150eb198de56f9e5638561252cbc9a8f39ae3fcffdfe26cef72858c30c6e94dd24d2c"
+  },
+  {
+    "path": "mods/cloth-config-15.0.140-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/izKINKFg/cloth-config-15.0.140-neoforge.jar",
+    "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d"
+  },
+  {
+    "path": "mods/codxlib-1.6.1-neoforge+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/6oyMM4yX/versions/MMcDASmX/codxlib-1.6.1-neoforge%2B1.21.1.jar",
+    "sha512": "11e1404f14eefd5483fcc17e681c619a1f5c7e45f11f2ea5bb53b672917511add06cfdf5ad97869769d3db3124a3fdc88e7883fa30bfe88304e56d75f2fabcbd"
+  },
+  {
+    "path": "mods/corpse-neoforge-1.21.1-1.1.22.jar",
+    "url": "https://cdn.modrinth.com/data/WrpuIfhw/versions/SElnDbg1/corpse-neoforge-1.21.1-1.1.22.jar",
+    "sha512": "22261271a46bdbbf8b27bf34304abe69561612d5c3b56947170910948426566b812b3f72153880b64a223fff5858b5ae1e8290d46deb9271ecf6dc88b0ba3f9b"
+  },
+  {
+    "path": "mods/create-1.21.1-6.0.10.jar",
+    "url": "https://cdn.modrinth.com/data/LNytGWDc/versions/UjX6dr61/create-1.21.1-6.0.10.jar",
+    "sha512": "11cc8fc049d2f67f6548c7abfada6b82a3adb5c7ca410a742de04bbca76e03862c518721b88d806f6e6d768a4d68531fdb903a85859b25d1484d550cc7bafd4b"
+  },
+  {
+    "path": "mods/create-aeronautics-bundled-1.21.1-1.3.3.jar",
+    "url": "https://cdn.modrinth.com/data/oWaK0Q19/versions/demX2roU/create-aeronautics-bundled-1.21.1-1.3.3.jar",
+    "sha512": "e28026fd6447b997f2c9b81c1d939094cf26c5c8572c6194b65282106f17257729efaecec670d0f2c84c6d7b2160102b08abb4e5822cf0fc01a4f4c74e5640a8"
+  },
+  {
+    "path": "mods/create-confectionery1.21.1_v1.1.3b.jar",
+    "url": "https://cdn.modrinth.com/data/WPE5gRs9/versions/ndnETBEN/create-confectionery1.21.1_v1.1.3b.jar",
+    "sha512": "ee299e0b3fc12edc506f7385a44eef207fcdc30ba6a0d30248614eed3486f78c661d9a176cb715eba044ac1a4255e38aa522bdd4b3fc1778049625108e114e82"
+  },
+  {
+    "path": "mods/cristellib-neoforge-1.21.1-3.1.7.jar",
+    "url": "https://cdn.modrinth.com/data/cl223EMc/versions/Sduz0AWP/cristellib-neoforge-1.21.1-3.1.7.jar",
+    "sha512": "6d21ceb6cd91e63a248251ded3812208ed5ea4f36abb11e8c6e16aa119a95b0e714f59ec7689ae1b1248c9831e5e3e63aa681aa7dfa9b220d93741118466cbd6"
+  },
+  {
+    "path": "mods/FarmersDelight-1.21.1-1.3.4.jar",
+    "url": "https://cdn.modrinth.com/data/R2OftAxM/versions/XTVZDOol/FarmersDelight-1.21.1-1.3.4.jar",
+    "sha512": "1f6f8796469f747cff36f477b4f589a3d69613882399f9ee7f86db36c7bca9aa4828731f43db15dc6c7f5a4c1bbe3d4092a232e8cef010b09cec0581848fda90"
+  },
+  {
+    "path": "mods/framework-neoforge-1.21.1-0.13.11.jar",
+    "url": "https://www.curseforge.com/api/v1/mods/549225/files/7530361/download",
+    "sha512": "bcc662c5588d0bd898f0878913b6d94d13e8fe7d58b54ae4fa15cf584a6ed5a4d202533f71f7ca40affcbd221da3d29d8b3af06329ae84faf75c68da99f27551"
+  },
+  {
+    "path": "mods/geckolib-neoforge-1.21.1-4.9.5.jar",
+    "url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/fTQxFFMT/geckolib-neoforge-1.21.1-4.9.5.jar",
+    "sha512": "1b49b43881834e6b048cfabf5464784dc381b20744c6a205702bd26f1b56b0f8efd44bc0fedd7ef2e4e3b32376df9eaf7142d3936b43cd5b7376e2fd9f865447"
+  },
+  {
+    "path": "mods/guaniao-neoforge-1.21.1-3.9.7.jar",
+    "url": "https://www.curseforge.com/api/v1/mods/1583213/files/9295994/download",
+    "sha512": "59bb1036d710d6cae59beb00c03abe6464a725cea62ccec91660fcbe0e3c634c1d77ee2d0f0c0303a9805e6cd0d8196f3f315d17da392918f6bdda147356cb4e"
+  },
+  {
+    "path": "mods/ia_steampunked-1.0.0-1.21.1-neoforge.jar",
+    "url": "https://www.curseforge.com/api/v1/mods/1757593/files/9278698/download",
+    "sha512": "da37a47357accd1fadeb8d0a22bd96789d0dd0be28e2b2f765dbfe9ed5a6451e4e52a0136d6e38d7daf9f54deb75be988aa21fe933f347c938c7ff08ab495f2b"
+  },
+  {
+    "path": "mods/immersive_aircraft-neoforge-1.7.0+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/x3HZvrj6/versions/xO17G766/immersive_aircraft-neoforge-1.7.0%2B1.21.1.jar",
+    "sha512": "a5dbd47dc22aaaeb7bc0151af98ae8b1c53b41e6fb14ada56586dc721142e51f95a681dff146f2f93df011e63ef74e6cc475be20124713ff2c4134cd2ce66294"
+  },
+  {
+    "path": "mods/immersive_furniture-neoforge-0.5.0+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/SvN6UGeF/versions/iPF8j9Wj/immersive_furniture-neoforge-0.5.0%2B1.21.1.jar",
+    "sha512": "6ef8b664874057d7d847607c32efb3df5d2708679511439f1f530d92f1fede088eb664ac2fcadb52d4a67549fe3b33e022c6a7c9247a9c8d291ae4e55ea6cf63"
+  },
+  {
+    "path": "mods/jei-1.21.1-neoforge-19.64.0.455.jar",
+    "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/iv3KiVkE/jei-1.21.1-neoforge-19.64.0.455.jar",
+    "sha512": "fdd02e57ce4dcf20b69860a5ace1b97d9a771486241179cf9edfe71e30c69bb4003b046d0cce8d8c4913b9689f1d8b04cf0542b0b04a6cf0b3b0465f3bb11702"
+  },
+  {
+    "path": "mods/man_of_many_planes-0.2.3+1.21.1-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/9qdTHi0q/versions/cQxBmeEC/man_of_many_planes-0.2.3%2B1.21.1-neoforge.jar",
+    "sha512": "a326202d14be059ab12e49fb81b6a0cfeaaa71a19e6ea787c757bc57cccaa15543923aa052015e6115d4c51b80cbd7e07741c4dcea0da410862c170a615c9fa6"
+  },
+  {
+    "path": "mods/mcw-bridges-3.1.2-mc1.21.1neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/GURcjz8O/versions/aQ7rY7ng/mcw-bridges-3.1.2-mc1.21.1neoforge.jar",
+    "sha512": "e98e476324229564132288f0a59bfcc897cff4cda7d12fe218563ca48d382d880662375687c69d1b4619144262ae09cbef130f4330474d8eacd37a21e8e9afb4"
+  },
+  {
+    "path": "mods/mezz_config-1.21.1-neoforge-0.7.1-standalone.jar",
+    "url": "https://cdn.modrinth.com/data/7tEfOcA7/versions/V6oWFnxW/mezz_config-1.21.1-neoforge-0.7.1-standalone.jar",
+    "sha512": "e3576344d96b4734d35c7ceb969020ef728a666b771fb6da0465d08d940daff3c48352f6f3ca989edbe7fff57737d2fea4621f6422e858f95efe9fa70b46dfb2"
+  },
+  {
+    "path": "mods/moonlight-1.21.1-3.8.5-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/twkfQtEc/versions/FhoIf5nd/moonlight-1.21.1-3.8.5-neoforge.jar",
+    "sha512": "5c54bee4fd84f13e8ebaaf3c86985b37dd45da39cd4c4fc126108105db49c7345541f5941d5d8422b31fd3c8738cee94f31df90c6cff376ffa760e40b6f6c67b"
+  },
+  {
+    "path": "mods/open-parties-and-claims-neoforge-1.21.1-0.33.0.jar",
+    "url": "https://cdn.modrinth.com/data/gF3BGWvG/versions/yWmXD7GW/open-parties-and-claims-neoforge-1.21.1-0.33.0.jar",
+    "sha512": "646fd9796ef2dfd1132e22aacf1a417639233d90fb7eb862a718badfed955d54714c88327b7ddc651f98cd5b7d2a80e8c91233d2232680d4998fdd10ef392ffb"
+  },
+  {
+    "path": "mods/refurbished_furniture-neoforge-1.21.1-1.0.22.jar",
+    "url": "https://www.curseforge.com/api/v1/mods/897116/files/7473565/download",
+    "sha512": "fde4f40a3a6439c43df1f522a92a1bd16e4a175966d17efe9dea425d42f7906e7ed7771fd84182b1fd7f3bb86ecd6b969fdca3c4aca4719597e4832e75ae2511"
+  },
+  {
+    "path": "mods/sable-neoforge-1.21.1-2.0.6.jar",
+    "url": "https://cdn.modrinth.com/data/T9PomCSv/versions/fg9dTRz9/sable-neoforge-1.21.1-2.0.6.jar",
+    "sha512": "76d293ce751a01cb9c095a3659b0a41e03e005480bc9d76dfdc73ec7c2eabf7923740c7b077921d42616673c496cd5143569f2085ddcebe174fd91d81e2a04b8"
+  },
+  {
+    "path": "mods/snassets_particles-1.0.1.jar",
+    "url": "https://cdn.modrinth.com/data/3w6lq0GG/versions/LyEE9aSZ/snassets_particles-1.0.1.jar",
+    "sha512": "4b08a19da683e89a8cbd103c68856a38f3385d0dc1c40dbfc703f50c6715f3957f81e49bf65028fd547a5eba8f24aec7b59ee1b9b0f6c197efef1b614051c617"
+  },
+  {
+    "path": "mods/sophisticatedbackpacks-1.21.1-3.26.23.2263.jar",
+    "url": "https://cdn.modrinth.com/data/TyCTlI4b/versions/8YikAvYD/sophisticatedbackpacks-1.21.1-3.26.23.2263.jar",
+    "sha512": "827f9f09a645f21a12357729f43e1dd3629ab62c6413eac39bdea9f503a4fb1de4db9fc35dce64f74b0b6e5cdf2b7c8a5de46e66c30c75e35d3454947763a083"
+  },
+  {
+    "path": "mods/sophisticatedcore-1.21.1-1.5.43.2504.jar",
+    "url": "https://cdn.modrinth.com/data/nmoqTijg/versions/h272jVeM/sophisticatedcore-1.21.1-1.5.43.2504.jar",
+    "sha512": "873cdbfd318233c5a0c165e947e8cbe550cd9a843c69d0e7a3316960c62adf75eb52896c9d2c80403693ce28d4c2ecea11fff62fd2a79c5df7ccfe7094bf0f72"
+  },
+  {
+    "path": "mods/sophisticatedstorage-1.21.1-1.6.22.2244.jar",
+    "url": "https://cdn.modrinth.com/data/hMlaZH8f/versions/LpU1yDLJ/sophisticatedstorage-1.21.1-1.6.22.2244.jar",
+    "sha512": "ff7c5e2d2053940d3d1c2ee818b9a6ae3feda3af2d4a56ef7cd62857bba984bc2f3f4b4c65eaba7a56c5e92e5fb3725d35ab3a5797f9c6299e208d7b227b1db1"
+  },
+  {
+    "path": "mods/supplementaries-1.21.1-4.1.4-neoforge.jar",
+    "url": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/JuYIXjpy/supplementaries-1.21.1-4.1.4-neoforge.jar",
+    "sha512": "13bee8c952bdcd3ad646da308b0b919be4bb35e19e33481cb9281d67279e63a638213a7064c0528709e4aceec2dea197ea360f0b4b83702e65b28f597bee7e96"
+  },
+  {
+    "path": "mods/t_and_t-fabric-neoforge-1.13.11.jar",
+    "url": "https://cdn.modrinth.com/data/DjLobEOy/versions/DZxwgj6V/t_and_t-fabric-neoforge-1.13.11.jar",
+    "sha512": "7464b1556250ceee25b4b531e07f65568c98a9d26f97232c1f6016be63ff243891de8283e072981deb968ea7d8b83bdc1579ee842b6b792446f4c26a43af4b62"
+  },
+  {
+    "path": "mods/xaerominimap-neoforge-1.21.1-26.6.0.jar",
+    "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/irjR7dHk/xaerominimap-neoforge-1.21.1-26.6.0.jar",
+    "sha512": "d56b93ddb921285624b491d6a85aba23748bec9974867399c881c257eb25a746df92a735473adf3a6875e0928a56ff78245d5238eb9207b0e45c3fec20c896dc"
+  },
+  {
+    "path": "mods/xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+    "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/SnQ4SoDe/xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+    "sha512": "4d2d78bc85afa002f682ef344b7284cf1baa4903cc5a11cd1d7bd260ac63952580ae717bab47079540ead633cdd5d8e4fdf230dc99a68bcb7a269500e7dada13"
+  }
+]

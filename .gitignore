@@ -3,9 +3,17 @@
 # Holds the WireGuard private key. Rebuild wg0.conf from wg0.conf.example (README.md).
 /wireguard/
 
-# Live server data
+# Live server data and backups (both contain private information)
 /data/
+/data.old/
+/backups/
 
-# backups/ is committed, except this early archive: it contains the RCON password
-# and logs with player IP addresses. Its .sanitized copy is safe from both.
-/backups/data-pre-mods-2026-11-27.tar.gz
+# Third-party files: download with tools/fetch-mods.py
+*.jar
+/client-extras/
+*.mrpack
+# World downloads go on GitHub Releases, not in Git
+*.zip
+*.tar.gz
+
+__pycache__/

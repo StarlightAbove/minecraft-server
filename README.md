@@ -18,7 +18,7 @@ Mod credits are in [MODS.md](MODS.md).
 - [How it works](#how-it-works) and [files](#files)
 - Setup: steps [1](#1-minecraft-server-and-mods) to [11](#11-idle-reclaim)
 - [Player modpack](#2-player-modpack)
-- [Website](#website), [backups](#backups), [running the server](#running-the-server)
+- [Website](#website), [backups](#backups), [sharing the world](#sharing-the-world), [running the server](#running-the-server)
 - [Future idea: auto-repair watchdog](#future-idea-auto-repair-watchdog-not-built)
 
 ## How it works
@@ -41,19 +41,20 @@ terminal; they are not script files.
 | Path | What it is | In Git |
 |---|---|---|
 | `compose.yml` | `mc`, `wireguard`, `router` and `website` services | yes |
-| `mods/` | Server mod jars and `modslinks.txt` | yes |
-| `client-extras/` | Player-only mod and resource pack | yes |
+| `mods/` | Server mod jars (downloaded) and `modslinks.txt` | only `modslinks.txt` |
+| `client-extras/` | Player-only mod and resource pack (downloaded) | no |
+| `tools/` | Mod download list and script, world export script | yes |
 | `website/` | Status site source and Dockerfile | yes |
 | `wg0.conf.example` | Template for the home WireGuard config | yes |
-| `backups/` | Sanitized backups (see [Backups](#backups)) | yes |
+| `backups/` | Local backups (see [Backups](#backups)) | no |
 | `data/` | Live server: world, settings, logs | no |
 | `wireguard/` | Home WireGuard config, **including the private key** | no |
 | `.env` | Local secrets | no |
 
-**Keep the GitHub repository private.** Many mods are "All Rights Reserved" (see
-[MODS.md](MODS.md)). Crediting an author doesn't give permission to redistribute
-their files, and a private repository doesn't grant it either; check each license
-before sharing. Backups also contain player names and UUIDs.
+**This repository is public.** Mod files, resource packs, modpacks and backups
+aren't stored in it. Many mods are "All Rights Reserved" (see [MODS.md](MODS.md)),
+and crediting an author doesn't give permission to redistribute their files. See
+[Sharing the world](#sharing-the-world) for the world download.
 
 `wireguard/` is **not** fully recreated by Docker. The container makes some files,
 but you create `wg_confs/wg0.conf` yourself ([step 6](#6-home-containers)).
@@ -66,6 +67,7 @@ but you create `wg_confs/wg0.conf` yourself ([step 6](#6-home-containers)).
 21.1.267, 8 GB memory. At startup the image copies `./mods` into `data/mods`.
 
     cd ~/homelab/services/minecraft
+    python3 tools/fetch-mods.py              # download the mod files
     docker compose up -d mc
     docker compose logs -f mc                # look for "Done", then Ctrl+C
     docker exec minecraft-server rcon-cli "neoforge mods"
@@ -95,8 +97,12 @@ connections.** Then add players:
   turn it on in `data/server.properties`.
 - New structures (such as Towns and Towers) only appear in unexplored areas.
 
+`tools/fetch-mods.py` downloads the exact files listed in `tools/mods.lock.json`
+and verifies their checksums. It relies on those downloads staying available.
+
 To change mods: [back up](#backups), edit `mods/`, run `docker compose restart mc`,
-check the logs, and update MODS.md. Check `data/mods` for leftover old jars.
+check the logs, and update MODS.md and `tools/mods.lock.json` (path, download URL
+and `sha512sum` for each file). Check `data/mods` for leftover old jars.
 
 ## 2. Player modpack
 
@@ -418,10 +424,12 @@ A Next.js page showing server status, players and the modpack link. It runs in t
 
 ## Backups
 
-`backups/` goes to GitHub, but `data/` doesn't. A plain archive of `data/` would
-include the **RCON password** (`server.properties`, `.rcon-cli.*`) and **player IP
-addresses** (logs, ban list), so use the command below. It leaves those out, along
-with downloadable files and `data/mods`, which comes from `mods/`.
+Backups stay on the PC: neither `backups/` nor `data/` goes into Git. Keep another
+copy on a different drive. A plain archive of `data/` would include the **RCON
+password** (`server.properties`, `.rcon-cli.*`) and **player IP addresses** (logs,
+ban list), so use the command below. It leaves those out, along with downloadable
+files and `data/mods`, which comes from `mods/`. These backups still contain player
+data, so **don't publish them**.
 
 **PC (fish):** stopping `mc` gives a consistent copy. Do it when nobody is playing.
 
@@ -436,16 +444,21 @@ docker compose start mc
 ls -lh $FILE
 ```
 
-Check that `tar` showed no errors. Before pushing:
+Check that `tar` showed no errors.
 
-- New mods may add secrets in `data/config` or the world folder. List a backup with
-  `tar -tzf FILE` and check anything unfamiliar.
-- GitHub rejects files over 100 MB, and a committed backup stays in Git history
-  even if the file is deleted later. As the world grows, store backups elsewhere.
+### Sharing the world
 
-The early file `data-pre-mods-2026-11-27.tar.gz` contains the password and logs,
-so `.gitignore` excludes it. Commit the `.sanitized` copy instead. Both are from
-**before the mods were installed**.
+Share a world-only zip, not a backup. Create it from a backup:
+
+    python3 tools/export-world.py backups/BACKUP.tar.gz petrova-world.zip
+
+It keeps `data/world` without player data, advancements, stats, claims or parties,
+then searches for known player names and IDs. Review anything it reports. The
+search can miss things, and builds, signs, books or map locations can still
+identify people, so check with the people who play. Anyone opening the world needs
+the same mods.
+
+Attach the zip to a GitHub Release. Don't commit it.
 
 ### Restore
 
@@ -453,7 +466,8 @@ so `.gitignore` excludes it. Commit the `.sanitized` copy instead. Both are from
    `docker compose stop website router wireguard mc`
 2. Move the current data aside with `mv data data.old` (check that `data.old`
    doesn't exist). Don't extract over live data, and don't commit `data.old`.
-3. Extract: `tar -xzf backups/FILE.tar.gz`
+3. Extract: `tar -xzf backups/FILE.tar.gz`. If `mods/` is missing files, run
+   `python3 tools/fetch-mods.py`.
 4. Run `docker compose up -d mc` and wait for "Done". This recreates
    `server.properties` with default settings.
 5. Set `white-list=true` and any other custom settings in

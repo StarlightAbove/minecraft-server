@@ -27,7 +27,7 @@ DNS points the name at the VPS. The port decides what happens.
 
     Minecraft --25565--> VPS --WireGuard--> [wireguard container] mc-router :25565 --> mc
     Browser   --80/443-> VPS Caddy --WireGuard--> [wireguard container] website :3000
-                                                                  /map/ --> mc :8080 (squaremap)
+                                                                  /map/ --> mc :8100 (BlueMap)
 
 - No SRV record is needed, because 25565 is Minecraft's default port.
 - The home PC only dials out, so the router needs no port forwarding.
@@ -425,33 +425,43 @@ A Next.js page showing server status, players and the modpack link. It runs in t
 
 ## World map
 
-[squaremap](https://modrinth.com/plugin/squaremap) runs inside `mc`. Its web server
-(port 8080) isn't published; the website serves it at
-`https://mc.elizakishan.com/map/` and shows it in the **Map** section. The VPS needs
-no changes. Players don't need to install it.
+[BlueMap](https://modrinth.com/plugin/bluemap) 5.7 (the newest NeoForge build found
+for 1.21.1) runs inside `mc` and draws a 3D map. Its web server (port 8100) isn't
+published; the website serves it at `https://mc.elizakishan.com/map/` and shows it
+in the **Map** section. The VPS needs no changes. Players don't need to install it.
 
-Settings are in `data/squaremap/config.yml`, which is created on first start and
-isn't in Git. After the first start, check these:
+[OpenPaC BlueMap Integration](https://modrinth.com/mod/openpac-bluemap-refreshed)
+draws Open Parties and Claims land claims on the map. It is an unofficial port,
+and its page says it hasn't been thoroughly tested. The map is public, so claim
+outlines, and the claim or player names on them, are too.
 
-| Setting | Value | Why |
+BlueMap's settings are in `data/config/bluemap/`, which is created on first start
+and isn't in Git. After the first start, check these:
+
+| File and setting | Value | Why |
 |---|---|---|
-| `settings.web-address` | `https://mc.elizakishan.com/map` | Public address |
-| `world-settings.default.player-tracker.enabled` | `true` (the default) | Live player positions, to help people find each other. The map is public, so anyone can see them, along with armor and health |
+| `core.conf`: `accept-download` | `true` | Required. Accepts [Mojang's EULA](https://account.mojang.com/documents/minecraft_eula) and downloads the Minecraft client file for textures. Don't redistribute that file |
+| `plugin.conf`: `hide-sneaking` | `true` | Lets players hide from the map by sneaking |
+| `core.conf`: `metrics` | `false` | No usage reports to BlueMap |
+| `plugin.conf`: `live-player-markers` | `true` (the default) | Live player positions, to help people find each other. The map is public, so anyone can see them |
 
-Then apply the settings and draw what has already been explored:
+Then apply the settings. BlueMap renders what has been explored, and keeps
+changed areas updated:
 
-    docker exec minecraft-server rcon-cli "squaremap reload"
-    docker exec minecraft-server rcon-cli "squaremap fullrender minecraft:overworld"
+    docker exec minecraft-server rcon-cli "bluemap reload"
+    docker exec minecraft-server rcon-cli "bluemap"       # render progress
 
-After that, changed areas update automatically. The Nether and End stay blank until
-someone visits them; a full render of a world nobody has visited logs a "Failed to
-list region files" warning.
+The Nether and End stay blank until someone visits them.
 
-To hide someone's position, or show it again (regular players likely can't run
-these themselves, as squaremap appears to require operator permission):
+Claims update as they change. To redraw them by hand:
 
-    docker exec minecraft-server rcon-cli "squaremap hide PLAYER_NAME"
-    docker exec minecraft-server rcon-cli "squaremap show PLAYER_NAME"
+    docker exec minecraft-server rcon-cli "openpac-bluemap refresh-now"
+
+The add-on's settings (marker height and fallback refresh interval) are in
+`data/config/opac-bluemap.json`.
+
+Players are hidden while sneaking, in spectator mode, or invisible (an invisibility
+effect). BlueMap 5.7 lists no command for hiding one player by name.
 
 ## Backups
 
@@ -459,7 +469,8 @@ Backups stay on the PC: neither `backups/` nor `data/` goes into Git. Keep anoth
 copy on a different drive. A plain archive of `data/` would include the **RCON
 password** (`server.properties`, `.rcon-cli.*`) and **player IP addresses** (logs,
 ban list), so use the command below. It leaves those out, along with downloadable
-files, `data/mods` (which comes from `mods/`) and the rendered map. These backups still contain player
+files, `data/mods` (which comes from `mods/`), and `data/bluemap` (the rendered map
+and the downloaded Minecraft client file; BlueMap's settings are kept). These backups still contain player
 data, so **don't publish them**.
 
 **PC (fish):** stopping `mc` gives a consistent copy. Do it when nobody is playing.
@@ -470,7 +481,7 @@ set FILE backups/data-(date +%F-%H%M).tar.gz
 docker compose stop mc
 and tar -czf $FILE --exclude=data/libraries --exclude=data/.cache --exclude=data/mods \
     --exclude=data/logs --exclude=data/crash-reports --exclude=data/server.properties \
-    --exclude=data/squaremap/web --exclude=data/squaremap/data \
+    --exclude=data/bluemap \
     --exclude='data/.rcon-cli*' --exclude=data/banned-ips.json data
 docker compose start mc
 ls -lh $FILE

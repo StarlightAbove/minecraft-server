@@ -30,8 +30,8 @@ The site runs in the `website` container on the home PC (`Dockerfile`, defined i
 - Title, tagline, versions, modpack and launcher links: `src/lib/config.ts`
 - Server address, whitelist contact and map URL: also `src/lib/config.ts`.
   Empty values show placeholders. Rebuild after any change.
-- World map: squaremap, served under `/map/` by a rewrite in `next.config.ts`.
-  It forwards to `http://mc:8080`; set `MAP_ORIGIN` at **build** time to change that
-  (for `npm run dev`, point it at a reachable squaremap).
+- World map: BlueMap, served under `/map/` by a rewrite in `next.config.ts`.
+  It forwards to `http://mc:8100`; set `MAP_ORIGIN` at **build** time to change that
+  (for `npm run dev`, point it at a reachable BlueMap).
 - Minecraft address: `MC_HOST` and `MC_PORT` environment variables (default `127.0.0.1:25565`)
 - Voxel artwork and favicon: `node scripts/make-art.mjs`

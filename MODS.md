@@ -16,6 +16,7 @@ Crediting authors does **not** grant permission to redistribute their files.
 | [Alex's Mobs Continued](https://modrinth.com/mod/alexs-mobs-continued) | 2.3.0 | Original designs, models, textures and animations: AlexModGuy and the Alex's Mobs team. Continuation: Lynk (Codx). Jar lists Alexthe668 (as spelled there), Carro1001, Paint_Ninja, Lynk, Codx.io | GPL-3.0-only |
 | [Aquaculture 2](https://modrinth.com/mod/aquaculture) | 2.7.22 | Shadowclaimer (Shadowclaimr), Girafi. Credits: Glassmaker, lclc98, Freyja, Rebelkeithy | All Rights Reserved |
 | [Bird Watching](https://www.curseforge.com/minecraft/mc-mods/bird-watching) | 3.9.7 | EdDYON | MIT (code); restricted (model assets) |
+| [BlueMap](https://modrinth.com/plugin/bluemap) (server only) | 5.7 | BlueColored (Modrinth project owner) and contributors | MIT |
 | [Cloth Config API](https://modrinth.com/mod/cloth-config) | 15.0.140 | shedaniel | LGPL-3.0-only |
 | [CodxLib](https://modrinth.com/mod/codxlib) | 1.6.1 | codx (Lynk / Codx) | CC-BY-NC-ND-4.0 |
 | [Corpse](https://modrinth.com/mod/corpse) | 1.1.22 | Max Henkel (henkelmax) | All Rights Reserved |
@@ -35,13 +36,13 @@ Crediting authors does **not** grant permission to redistribute their files.
 | [MezzConfig](https://modrinth.com/mod/mezzconfig) | 0.7.1 | mezz | MIT |
 | [Moonlight Lib](https://modrinth.com/mod/moonlight) | 3.8.5 | MehVahdJukaar, xelbayria | LGPL with additional dependency clause (jar says Supplementaries Team License 1.5) |
 | [MrCrayfish's Furniture Mod: Refurbished](https://www.curseforge.com/minecraft/mc-mods/refurbished-furniture) | 1.0.22 | MrCrayfish | MIT |
+| [OpenPaC BlueMap Integration](https://modrinth.com/mod/openpac-bluemap-refreshed) (server only) | 1.2.1 | Unofficial NeoForge port ([alexiokay](https://github.com/alexiokay/opac-bluemap-1.21.1-neoforge)) of work by Gaming32 and SnowyLynn. Jar lists Gaming32, DreamyLynn | MIT |
 | [Open Parties and Claims](https://modrinth.com/mod/open-parties-and-claims) | 0.33.0 | Xaero96 (thexaero) and other contributors | LGPL-3.0-only |
 | [Sable](https://modrinth.com/mod/sable) | 2.0.6 | RyanHCode. Contributors and credits: Ocelot, Eriksonn, Cyvack, BeeIsYou, KyanBirb, Cake, Rhyguy1 | PolyForm Shield 1.0.0 |
 | [SnAssets Library: Particles](https://modrinth.com/mod/snassets-library-particles) | 1.0.1 | Mr.Mulle (Mr_Mulle) | All Rights Reserved |
 | [Sophisticated Backpacks](https://modrinth.com/mod/sophisticated-backpacks) | 3.26.23.2263 | P3pp3rF1y; art by Ridanisaurus | All Rights Reserved |
 | [Sophisticated Core](https://modrinth.com/mod/sophisticated-core) | 1.5.43.2504 | P3pp3rF1y | All Rights Reserved |
 | [Sophisticated Storage](https://modrinth.com/mod/sophisticated-storage) | 1.6.22.2244 | P3pp3rF1y; art by Ridanisaurus | All Rights Reserved |
-| [squaremap](https://modrinth.com/plugin/squaremap) (server only) | 1.3.2 | jmp (jpenilla) | MIT |
 | [Supplementaries](https://modrinth.com/mod/supplementaries) | 4.1.4 | MehVahdJukaar, Plantkillable | Supplementaries Team License |
 | [Towns and Towers](https://modrinth.com/mod/towns-and-towers) | 1.13.11 | Biban_Auriu, Kubek, Cristelknight (Cristelknight999) | CC-BY-NC-SA-4.0 (jar says CC-BY-NC-ND-4.0) |
 | [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap) | 26.6.0 | xaero96 (thexaero) | All Rights Reserved |

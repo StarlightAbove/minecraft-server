@@ -12,7 +12,7 @@ export const SITE = {
   serverAddress: "mc.elizakishan.com",
   // Instagram handle (without the @) that people message to get whitelisted.
   whitelistContact: "eliza.kishan",
-  // squaremap, proxied by this site (see next.config.ts). Leave empty to show the placeholder.
+  // BlueMap, proxied by this site (see next.config.ts). Leave empty to show the placeholder.
   mapUrl: "/map/index.html",
 };
 

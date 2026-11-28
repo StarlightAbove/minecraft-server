@@ -444,12 +444,18 @@ and isn't in Git. After the first start, check these:
 | `plugin.conf`: `hide-sneaking` | `true` | Lets players hide from the map by sneaking |
 | `core.conf`: `metrics` | `false` | No usage reports to BlueMap |
 | `plugin.conf`: `live-player-markers` | `true` (the default) | Live player positions, to help people find each other. The map is public, so anyone can see them |
+| `webapp.conf`: `use-cookies` | `false` | Shows new terrain on the next visit. With `true`, the map reuses its tile addresses, and browsers keep tiles for 24 hours. Visitors' view settings aren't saved, and tiles may download again on each visit |
 
 Then apply the settings. BlueMap renders what has been explored, and keeps
 changed areas updated:
 
     docker exec minecraft-server rcon-cli "bluemap reload"
     docker exec minecraft-server rcon-cli "bluemap"       # render progress
+
+A reload restarts BlueMap's web server, and the website can keep using dead
+connections to the old one, so some map requests hang. Restart it afterwards:
+
+    docker compose restart website
 
 The Nether and End stay blank until someone visits them.
 

@@ -29,6 +29,9 @@ export default async function Home() {
           <p className="map-note">
             The map only renders as far as chunks have loaded. This is a technical Minecraft
             limitation. If you wanna see more of the map, explore!
+            <br />
+            Yes, this map essentially gives you spectator. Please don&apos;t abuse it! It&apos;s a fun
+            way to see other people&apos;s builds, but don&apos;t abuse it for combat, etc.
           </p>
           {SITE.mapUrl ? (
             <>
